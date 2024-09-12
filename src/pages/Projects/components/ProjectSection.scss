@@ -36,15 +36,11 @@
       margin-bottom: $spacing-lg;
 
       img {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 150px;
+        height: auto;
         margin-right: $spacing-md;
         object-fit: cover; // Ensures the image doesn't distort
         transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.1); // Slightly enlarges the image on hover
-        }
       }
 
       .info-container {

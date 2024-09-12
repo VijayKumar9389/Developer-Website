@@ -71,7 +71,7 @@ const Skills: React.FC = () => {
         <div className="skills-container">
             <Header
                 heading="Bring Your Digital Solution to Life"
-                desc="From Concept to Deployment, I Oversee Every Stage of the Application Development Lifecycle"
+                desc="From concept to deployment, I manage every step of development to drive your organization's digital transformation."
             />
             <div className="competency-list" data-aos="fade-right">
                 {competenciesData.map((competency, index) => (

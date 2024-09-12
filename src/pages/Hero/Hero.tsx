@@ -8,8 +8,8 @@ const Hero = () => {
                 <div className="hero-text">
                     <h1 className="hero-title">Launch Your Custom Business Application</h1>
                     <p>
-                        Access cloud-based apps from any device, ensuring seamless management and visualization anytime,
-                        anywhere.
+                        I design secure, cloud-based web applications (accessible via a web browser) to streamline business operations, improve efficiency, and
+                        ensure accuracy.
                     </p>
                 </div>
                 <div className="hero-image-wrapper">

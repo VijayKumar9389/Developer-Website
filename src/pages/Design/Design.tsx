@@ -26,8 +26,8 @@ const Slideshow: React.FC = () => {
     return (
         <div className="slideshow-container">
             <Header
-                heading="Unlock the Potential of Cloud Applications"
-                desc="Engineered for secure communication, optimized business operations, enhanced efficiency, and guaranteed data accuracy."
+                heading="Unlock the Power of Cloud Applications"
+                desc="Enjoy a sleek, responsive interface for seamless data management."
             />
             <div className="slideshow-wrapper" data-aos="fade-in">
                 <div className="slideshow">
