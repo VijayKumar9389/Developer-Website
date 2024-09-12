@@ -1,0 +1,149 @@
+// Import a Google Font (optional)
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import "./variables.scss";
+
+// Font Sizes for Headings
+$font-size-h1: 2.5rem; // Base
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+$font-size-h4: 1.5rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+// Responsive Sizes for Headings
+$font-size-h1-xs: 2rem; // Adjusted for smaller screens
+$font-size-h1-xl: 3rem; // Larger for extra-large screens
+
+$font-size-h2-xs: 1.75rem; // Adjusted for smaller screens
+$font-size-h2-xl: 2.5rem; // Larger for extra-large screens
+
+$font-size-h3-xs: 1.5rem; // Adjusted for smaller screens
+$font-size-h3-xl: 2rem; // Larger for extra-large screens
+
+$font-size-h4-xs: 1.25rem; // Adjusted for smaller screens
+$font-size-h4-xl: 1.75rem; // Larger for extra-large screens
+
+$font-size-h5-xs: 1.1rem; // Adjusted for smaller screens
+$font-size-h5-xl: 1.5rem; // Larger for extra-large screens
+
+$font-size-h6-xs: 1rem; // Adjusted for smaller screens
+$font-size-h6-xl: 1.25rem; // Larger for extra-large screens
+
+// Font Size for Paragraphs
+$font-size-p: 1.125rem; // Base
+$font-size-p-xs: 1rem; // Smaller screens
+$font-size-p-xl: 1.25rem; // Larger screens
+
+// Global Styles
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: $font-size-base-md;
+  line-height: $line-height-base;
+  color: $text-primary;
+  background-color: $background-color;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-base-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-base-xl;
+  }
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  line-height: $line-height-heading;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-bold;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-h1-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-h1-xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-h2-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-h2-xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-medium;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-h3-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-h3-xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-medium;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-h4-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-h4-xl;
+  }
+}
+
+h5 {
+  font-size: $font-size-h5;
+  font-weight: $font-weight-regular;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-h5-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-h5-xl;
+  }
+}
+
+h6 {
+  font-size: $font-size-h6;
+  font-weight: $font-weight-regular;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-h6-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-h6-xl;
+  }
+}
+
+// Paragraphs
+p {
+  font-size: $font-size-p;
+  line-height: $line-height-base;
+
+  @media (max-width: $breakpoint-xs) {
+    font-size: $font-size-p-xs;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $font-size-p-xl;
+  }
+}

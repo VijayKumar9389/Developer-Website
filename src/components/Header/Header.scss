@@ -1,0 +1,21 @@
+@import '../../styles/variables'; // Import your variables
+
+.header-container {
+  position: relative;
+  padding: $spacing-lg 0;
+  background-color: $background-color; // Adjust to your theme color
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  h1 {
+    color: $text-primary; // Main heading color
+    font-weight: $font-weight-medium;
+  }
+
+  p {
+    color: $text-primary; // Secondary text color
+    margin: 0;
+  }
+
+}

@@ -1,0 +1,145 @@
+@import '../../styles/variables';
+
+// Main container for the skills section
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: $spacing-lg $spacing-md; // Add padding for better spacing
+  max-width: $breakpoint-xxl;
+  margin: 0 auto;
+  width: 100%;
+
+  // Competency list styles
+  .competency-list {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    gap: $spacing-md; // Consistent spacing
+    padding: $spacing-sm; // Reduced padding for a smaller look
+    scroll-behavior: smooth;
+
+    .competency-item {
+      display: flex;
+      align-items: center;
+      padding: $spacing-xs $spacing-sm;
+      gap: $spacing-xs;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: $border-radius-md; // Slightly smaller border-radius
+      background-color: rgba($accent-background-color, 0.8); // Soft background
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Softer shadow
+      backdrop-filter: blur(6px); // Reduced blur
+      border: 1px solid rgba($primary-color, 0.2);
+
+      &:hover,
+      &.active {
+        background-color: $primary-color; // Highlight on hover
+        color: $card-background;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // More shadow on hover
+        transform: scale(1.05); // Slight zoom effect
+      }
+
+      .icon {
+        margin-right: $spacing-xs; // Smaller margin
+        color: inherit;
+        font-size: 1.2rem; // Slightly smaller icons
+      }
+
+      .title {
+        margin: 0;
+      }
+    }
+  }
+
+  // Competency section container
+  .competency-section {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-md; // Consistent padding around the section
+    align-items: center;
+    width: 100%;
+
+    @media (min-width: $breakpoint-lg) {
+      flex-direction: row; // Switch to row layout on larger screens
+      justify-content: center; // Center content horizontally
+    }
+
+    // Competency details section
+    .competency-details {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+
+      @media (min-width: $breakpoint-lg) {
+        flex-direction: row;
+        align-items: center; // Center both vertically and horizontally
+        justify-content: center; // Center content within the section
+        text-align: left;
+      }
+
+      .image-container {
+        flex: 1;
+        width: 100%;
+        margin-bottom: $spacing-md;
+
+        @media (min-width: $breakpoint-lg) {
+          width: 40%; // Set a smaller width for the image on larger screens
+          margin-right: $spacing-lg; // Add spacing between image and description
+          margin-bottom: 0;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: $border-radius-md; // Rounded corners for images
+        }
+      }
+
+      .description {
+        flex: 1;
+        width: 100%;
+
+        @media (min-width: $breakpoint-lg) {
+          width: 50%; // Control the width of the description on larger screens
+          margin-left: $spacing-lg; // Space between the image and description
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: $spacing-md;
+
+          li {
+            display: flex;
+            text-align: left;
+            align-items: center;
+            gap: $spacing-sm;
+
+            p {
+              margin: 0;
+              line-height: 1.1; // Slightly increased line-height for better readability
+            }
+
+            &:before {
+              content: "→";
+              color: $primary-color;
+              font-weight: $font-weight-bold;
+              display: inline-block;
+              margin-right: $spacing-xs;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

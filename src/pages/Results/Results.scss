@@ -1,0 +1,72 @@
+@import '../../styles/variables';
+
+// Wrapper for skill cards
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Slightly reduced min-width for better flexibility
+  gap: $spacing-md; // Increased gap for better spacing between cards
+  max-width: $breakpoint-xxl;
+  margin: $spacing-xl auto;
+  overflow: hidden;
+  padding-bottom: $spacing-md;
+
+  @media screen and (max-width: $breakpoint-lg) {
+    display: flex;
+    overflow-x: auto;
+    gap: $spacing-lg; // Increased gap for better spacing in horizontal layout
+    padding: $spacing-md 0; // Adjusted padding for smaller screens
+  }
+
+  .skill-card {
+    background: $card-background;
+    border-radius: $border-radius-md; // Increased border-radius for a modern, softer look
+    box-shadow: $shadow-small; // Enhanced shadow for more depth
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: start;
+    padding: $spacing-lg;
+    min-width: 250px;
+    min-height: 320px; // Slightly increased minimum height for better content fitting
+
+
+    @media screen and (max-width: $breakpoint-lg) {
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center; // Centered text on smaller screens
+      padding: $spacing-md;
+      min-width: 220px; // Reduced min-width for smaller screens
+      min-height: 300px;
+    }
+
+    .skill-icon {
+      font-size: 2.5rem; // Larger icon size for emphasis
+      color: $primary-color;
+      background: $accent-background-color;
+      margin-bottom: $spacing-md; // Adjusted margin for better spacing
+      border-radius: $border-radius-sm; // Fully rounded corners for icons
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $spacing-sm;
+      transition: background 0.3s ease, transform 0.3s ease; // Added transition for hover effect
+
+      @media screen and (max-width: $breakpoint-lg) {
+        background: none;
+        box-shadow: none; // Removed shadow on smaller screens
+      }
+    }
+
+    .skill-content {
+      .skill-title {
+        color: $text-primary;
+      }
+
+      .skill-description {
+        color: $text-secondary;
+      }
+    }
+  }
+}

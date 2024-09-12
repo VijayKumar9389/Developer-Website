@@ -1,0 +1,116 @@
+@import '../../styles/variables'; // Import global variables
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $breakpoint-lg; // Reduced max-width for better form alignment and readability
+  border-radius: $border-radius-lg; // Rounded corners for container
+  padding: 2rem 0;
+  overflow: hidden;
+
+  // Logo
+  .logo {
+    max-width: 250px; // Adjust as needed
+    height: auto;
+    margin-bottom: $spacing-lg;
+    animation: pulse 2s infinite; // Reuse pulse animation for logo
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-lg; // Increased gap for better spacing between elements
+
+  label {
+    display: flex;
+    flex-direction: column; // Stack label text and input vertically
+    color: $text-primary; // Use primary text color variable
+
+    input, textarea, select {
+      padding: $spacing-sm; // Use spacing variable for padding
+      border: none; // Remove default border
+      border-bottom: 1px solid $border-color; // Underline for input and select
+      margin-top: $spacing-xs; // Use spacing variable for margin
+      background: none;
+      color: $text-primary;
+
+      &:focus {
+        border-bottom-color: $primary-color; // Change underline color on focus
+        box-shadow: 0 1px 0 0 rgba($primary-color, 0.2); // Subtle shadow to match underline
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $text-secondary; // Placeholder text color
+      }
+    }
+
+    textarea {
+      resize: vertical; // Allow vertical resizing of the textarea
+      min-height: 120px; // Adjusted height for better UX
+      max-height: 400px; // Increased max-height for more flexibility
+    }
+  }
+
+
+  // Button
+  .site-btn {
+    background: linear-gradient(135deg, $primary-color, darken($primary-color, 10%)); // Gradient background
+    border: none;
+    border-radius: $border-radius-md; // Medium rounded corners for consistency
+    padding: $spacing-sm $spacing-md;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; // Smooth transitions
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    width: fit-content;
+
+    // Enhanced shadow for depth
+    box-shadow: $shadow-small;
+
+    .icon {
+      background-color: lighten($primary-color, 15%); // Slightly lighter shade for the icon
+      padding: $spacing-xs;
+      border-radius: 50%;
+      margin-left: $spacing-xs;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      display: none;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, darken($primary-color, 10%), darken($primary-color, 20%));
+      box-shadow: $shadow-medium;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6); // White text shadow
+
+      .icon {
+        background-color: lighten($primary-color, 10%); // Lighter shade on hover
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba($primary-color, 0.5); // Subtle focus ring
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    filter: brightness(1.5); // Brighten initially
+  }
+  50% {
+    filter: brightness(1); // Return to original brightness
+  }
+  100% {
+    filter: brightness(1.5); // Brighten again
+  }
+}

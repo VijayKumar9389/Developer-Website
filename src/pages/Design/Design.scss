@@ -1,0 +1,107 @@
+@import '../../styles/variables';
+
+.slideshow-container {
+  background-color: $background-color;
+  max-width: $breakpoint-xxl;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .slideshow-wrapper {
+    position: relative;
+    border-radius: $border-radius-lg;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slideshow {
+    display: flex;
+    position: relative;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+
+    .slide {
+      flex: 1;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateX(100%);
+
+      &.active {
+        display: flex;
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .slide-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius-lg;
+        box-shadow: $shadow-medium;
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+
+  .slide-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xl;
+    margin-top: $spacing-md;
+
+    .nav-button {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+        transform: scale(1.1); // Slightly enlarge button on hover
+      }
+
+      svg {
+        font-size: $font-size-base-lg;
+      }
+    }
+
+    .slideshow-indicators {
+      display: flex;
+      gap: $spacing-sm;
+
+      .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $border-color;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &.active {
+          background-color: $primary-color;
+        }
+
+        &:hover {
+          background-color: lighten($primary-color, 10%);
+          transform: scale(1.1); // Slightly enlarge indicator on hover
+        }
+      }
+    }
+  }
+
+  .slide-content-wrapper {
+    margin-top: $spacing-lg;
+    padding: 0 $spacing-lg;
+    text-align: center;
+
+    h5 {
+      color: $text-primary;
+    }
+  }
+}

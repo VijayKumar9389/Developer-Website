@@ -1,0 +1,69 @@
+@import '../../styles/variables';
+
+.hero-container {
+  position: relative;
+  padding: $spacing-xl $spacing-md;
+  text-align: left; /* Align content left for better readability */
+  color: $text-primary;
+  overflow: hidden;
+
+  /* Gradient background */
+  background: linear-gradient(135deg, $primary-color 0%, $accent-background-color 100%);
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @media(min-width: 768px) {
+      flex-direction: row; /* Two-column layout for desktop */
+    }
+
+    .hero-text {
+      flex: 1;
+      padding: $spacing-lg;
+      max-width: 600px; /* Limit text column width for better readability */
+
+      .hero-title {
+        font-weight: $font-weight-medium;
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: $spacing-md;
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        animation: fadeIn 1s ease-out;
+      }
+
+      p {
+        margin-bottom: $spacing-lg;
+        color: #fff;
+      }
+    }
+
+    .hero-image-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: $spacing-lg;
+
+      .hero-image {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* Animation for text fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

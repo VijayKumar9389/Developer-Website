@@ -1,0 +1,201 @@
+@import '../../../styles/variables';
+
+.project-section {
+  color: $text-primary;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+
+  .image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    margin-bottom: $spacing-lg;
+
+    .project-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(20%);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .designed-for {
+      display: flex;
+      align-items: center;
+      padding: $spacing-md;
+
+      margin-bottom: $spacing-lg;
+
+      img {
+        max-width: 100px;
+        max-height: 100px;
+        margin-right: $spacing-md;
+        object-fit: cover; // Ensures the image doesn't distort
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1); // Slightly enlarges the image on hover
+        }
+      }
+
+      .info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .project-title {
+          font-weight: $font-weight-bold;
+          margin: 0;
+
+        }
+
+        .project-description {
+          color: $text-secondary;
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+
+        img {
+          margin-bottom: $spacing-sm;
+        }
+
+        .info-container {
+          align-items: center;
+        }
+      }
+    }
+
+    .section-item {
+      .section-toggle {
+        cursor: pointer;
+        padding: $spacing-md;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
+        &:hover,
+        &.active {
+          background-color: $accent-background-color;
+        }
+
+        .section-content {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+
+          .section-header {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            h5 {
+              color: $text-primary;
+              margin: 0;
+            }
+
+            .section-description {
+              color: $text-secondary;
+              margin: 0;
+              font-style: italic;
+            }
+          }
+
+          .arrow-container {
+            display: flex;
+            align-items: center;
+
+            .arrow-icon {
+              color: $primary-color;
+              border: none;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              padding: 5px;
+              cursor: pointer;
+              font-size: 20px;
+              transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+              &.active {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+
+      .dropdown-content {
+        height: 0; // Initial height
+        overflow: hidden;
+        transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+        padding: 0; // No padding initially
+
+        &.open {
+          height: auto; // Auto height to fit content
+          padding: $spacing-md $spacing-lg;
+          border: 1px solid $border-color;
+          background-color: rgba($accent-background-color, 0.8); // Soft background
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Softer shadow
+          backdrop-filter: blur(6px); // Reduced blur
+        }
+
+        .details-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: $spacing-lg;
+
+          @media (min-width: $breakpoint-lg) {
+            flex-direction: row;
+          }
+        }
+
+        .details-content {
+          display: flex;
+          flex-direction: column;
+          gap: $spacing-lg;
+        }
+
+        .details-sections {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          gap: $spacing-lg;
+
+          .section-details {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            gap: $spacing-sm;
+
+            h5 {
+              font-weight: $font-weight-regular;
+            }
+
+            .details-image {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+              border-radius: $border-radius-md;
+              box-shadow: $shadow-small;
+              transition: transform 0.3s ease-in-out;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

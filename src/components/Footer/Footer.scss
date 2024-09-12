@@ -1,0 +1,99 @@
+@import '../../styles/variables';
+
+.footer {
+  background-color: $accent-background-color;
+  padding: $spacing-lg $spacing-md; // Added horizontal padding for better spacing on mobile
+  border-top: 1px solid $border-color;
+  position: relative;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-contact {
+    margin-bottom: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Center align items on mobile
+
+    @media (min-width: $breakpoint-md) {
+      align-items: flex-start; // Align items to start on larger screens
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      color: $text-primary;
+      font-size: $font-size-base-sm;
+      margin-bottom: $spacing-sm; // Increased margin for better spacing
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-icon {
+        margin-right: $spacing-sm;
+        color: $primary-color;
+        font-size: $font-size-base-md;
+      }
+
+      a {
+        color: $link-color;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .footer-actions {
+    margin-bottom: $spacing-md;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm; // Added gap for spacing between buttons
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      gap: $spacing-lg;
+    }
+
+    .action-button {
+      background-color: $primary-color;
+      color: $card-background;
+      border: none;
+      padding: $spacing-sm $spacing-md;
+      font-size: $font-size-base-sm;
+      border-radius: $border-radius-sm; // Updated to medium border-radius for better touch target
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none; // Removes underline
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .footer-bottom {
+    color: $text-secondary;
+    font-size: $font-size-base-xs;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+  }
+}
