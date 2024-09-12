@@ -13,7 +13,7 @@ import Upload from "../../assets/screenshoots/Upload.png";
 import Rentals from "../../assets/screenshoots/Rentals.png";
 import Questions from "../../assets/screenshoots/Questions.png";
 
-import InventoryApp from "../../assets/Media/inventory.png"
+import InventoryApp from "../../assets/Media/Collab.png"
 import OutReach from "../../assets/Media/outreach.png"
 
 import Triton from "../../assets/Triton Logo.png"
