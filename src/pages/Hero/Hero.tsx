@@ -6,9 +6,9 @@ const Hero = () => {
         <div className="hero-container">
             <div className="hero-content">
                 <div className="hero-text">
-                    <h1 className="hero-title">Build the Perfect Business Tool for Your Vision</h1>
+                    <h1 className="hero-title">Build the Perfect Business Tool</h1>
                     <p className="hero-subtitle">
-                        I craft secure, cloud-based applications tailored to streamline your business operations, ensuring efficiency and scalability.
+                        I craft secure, cloud-based web applications that streamline your business operations and enhance efficiency.
                     </p>
                 </div>
                 <div className="hero-image-wrapper">
