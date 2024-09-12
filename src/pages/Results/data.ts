@@ -3,6 +3,7 @@ import { RiBarChartLine } from 'react-icons/ri';
 import { FaUsers } from 'react-icons/fa';
 import { IoMdFiling } from 'react-icons/io';
 import { BiErrorCircle } from 'react-icons/bi';
+import {GiHealthNormal} from "react-icons/gi";
 
 export const skillsData = [
     {
@@ -38,6 +39,6 @@ export const skillsData = [
     {
         title: 'Dedicated Support',
         description: 'Access dedicated support for ongoing monitoring and troubleshooting to address any issues promptly.',
-        icon: FaUsers, // Users icon for support
+        icon: GiHealthNormal, // Users icon for support
     },
 ];
