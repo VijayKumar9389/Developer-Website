@@ -1,5 +1,5 @@
 import './Skills.scss';
-import React, { useState } from 'react';
+import React from 'react';
 import { FaCode, FaListUl, FaCloudUploadAlt, FaPencilAlt } from 'react-icons/fa';
 import Header from "../../components/Header/Header";
 import svgOne from '../../assets/Media/requirements.svg';
@@ -18,10 +18,10 @@ export const competenciesData: Competency[] = [
     {
         title: "Consulting",
         description: [
-            "Assess your business operations to uncover inefficiencies and growth opportunities.",
-            "Deliver actionable recommendations to streamline workflows and increase efficiency.",
-            "Create a customized technology roadmap that aligns with your unique business goals.",
-            "Provide ongoing support and transparent communication to ensure successful project delivery."
+            "Assess your business operations to identify areas for improvement and growth.",
+            "Provide recommendations to streamline your workflows and enhance productivity.",
+            "Create a technology roadmap tailored to your specific business needs and goals.",
+            "Offer clear communication to ensure successful project delivery."
         ],
         icon: FaListUl,
         img: svgOne,
@@ -31,8 +31,8 @@ export const competenciesData: Competency[] = [
         description: [
             "Craft easy-to-use interfaces that make navigating your software simple for anyone.",
             "Ensure your application works perfectly on any device with responsive design.",
-            "Automate time-consuming tasks and calculations with intelligent algorithms.",
-            "Develop accurate data models that reflect your business operations for better decision-making."
+            "Translate your business processes into clear, accurate data models that reflect your operations.",
+            "Automate routine tasks, saving you time and reducing manual work."
         ],
         icon: FaPencilAlt,
         img: svgTwo,
@@ -40,10 +40,10 @@ export const competenciesData: Competency[] = [
     {
         title: "Development",
         description: [
-            "Build strong, secure systems to seamlessly connect your app to its database.",
-            "Implement checks to ensure your data is always accurate and secure.",
-            "Write clean, efficient code that makes it easy to add new features in the future.",
-            "Use cutting-edge tools like React and Node.js to develop your app faster."
+            "Build secure and high-performance servers to manage your data.",
+            "Use modern tools like React and Node.js to deliver your solutions quickly.",
+            "Use the latest security measures to ensure safe communication.",
+            "Thorough validation to safeguard user inputs and deletions to prevent operational errors."
         ],
         icon: FaCode,
         img: svgThree,
@@ -51,21 +51,17 @@ export const competenciesData: Competency[] = [
     {
         title: "Deployment",
         description: [
-            "Protect your business with top-tier security systems to prevent data breaches.",
-            "Set up reliable cloud hosting so your app is always available and running smoothly.",
-            "Provide secure storage solutions for all your important business files and images.",
-            "Offer ongoing monitoring and support to keep your systems up-to-date and running efficiently."
+            "Implement continuous integration to make updates and new features easy to add.",
+            "Reliable cloud hosting ensures your app is always available and performs smoothly.",
+            "Configure scalable cloud storage for all your important files and data.",
+            "Provide ongoing monitoring and support to troubleshoot issues and keep everything running smoothly."
         ],
         icon: FaCloudUploadAlt,
         img: svgFour,
     }
 ];
-const Skills: React.FC = () => {
-    const [selectedCompetency, setSelectedCompetency] = useState<Competency>(competenciesData[0]);
 
-    const handleClick = (competency: Competency) => {
-        setSelectedCompetency(competency);
-    };
+const Skills: React.FC = () => {
 
     return (
         <div className="skills-container">
@@ -73,33 +69,34 @@ const Skills: React.FC = () => {
                 heading="Bring Your Digital Solution to Life"
                 desc="From concept to deployment, I manage every step of development to drive your organization's digital transformation."
             />
-            <div className="competency-list" data-aos="fade-right">
+
+            <div className="competencies-grid">
                 {competenciesData.map((competency, index) => (
-                    <div
-                        key={index}
-                        className={`competency-item ${selectedCompetency.title === competency.title ? 'active' : ''}`}
-                        onMouseEnter={() => handleClick(competency)}
-                    >
-                        <competency.icon className="icon"/>
-                        <span className="title"><h5>{competency.title}</h5></span>
+                    <div key={index} className={`competency-section ${index % 2 === 0 ? 'even' : 'odd'}`}>
+                        <div className="competency-details">
+                            <div className="image-container" data-aos="fade-left">
+                                <img src={competency.img} alt={competency.title} className="competency-img" />
+                            </div>
+                            <div className="description" >
+                                <div className="header-icon-title">
+                                    <h3>{competency.title}</h3>
+                                </div>
+                                <ul>
+                                    {competency.description.map((item, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="description-item"
+                                            data-aos="fade-right"
+                                            data-aos-delay={`${idx * 100}`} // Delay increases by 100ms for each item
+                                        >
+                                            <p>{item}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 ))}
-            </div>
-            <div className="competency-section">
-                <div className="competency-details">
-                    <div className="image-container" data-aos="fade-up">
-                        <img src={selectedCompetency.img} alt={selectedCompetency.title}/>
-                    </div>
-                    <div className="description" data-aos="fade-left">
-                        <ul>
-                            {selectedCompetency.description.map((item, index) => (
-                                <li key={index}>
-                                    <p>{item}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     );

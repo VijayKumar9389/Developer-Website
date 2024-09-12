@@ -9,7 +9,7 @@ export const skillsData = [
     {
         title: 'Enhanced Collaboration',
         description: 'Facilitate real-time collaboration on a unified platform, offering a consistent user experience across all devices to boost team coordination.',
-        icon: AiOutlineDatabase, // Database icon for data management
+        icon: AiOutlineDatabase, // Database icon for data  v   management
     },
     {
         title: 'Increased Productivity',

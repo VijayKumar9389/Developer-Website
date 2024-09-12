@@ -20,7 +20,7 @@
       height: auto;
       object-fit: cover;
       filter: grayscale(20%);
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
     }
   }
 
@@ -32,15 +32,14 @@
       display: flex;
       align-items: center;
       padding: $spacing-md;
-
       margin-bottom: $spacing-lg;
 
       img {
         max-width: 150px;
         height: auto;
         margin-right: $spacing-md;
-        object-fit: cover; // Ensures the image doesn't distort
-        transition: transform 0.3s ease;
+        object-fit: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
       }
 
       .info-container {
@@ -51,7 +50,6 @@
         .project-title {
           font-weight: $font-weight-bold;
           margin: 0;
-
         }
 
         .project-description {
@@ -84,7 +82,8 @@
 
         &:hover,
         &.active {
-          background-color: $accent-background-color;
+          background-color: rgba($accent-background-color, 0.1);
+          box-shadow: $shadow-medium;
         }
 
         .section-content {
@@ -101,6 +100,8 @@
             h5 {
               color: $text-primary;
               margin: 0;
+              font-size: $font-size-base-md;
+              font-weight: $font-weight-bold;
             }
 
             .section-description {
@@ -125,6 +126,10 @@
               font-size: 20px;
               transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
+              &:hover {
+                background-color: lighten($primary-color, 20%);
+              }
+
               &.active {
                 transform: rotate(180deg);
               }
@@ -134,18 +139,18 @@
       }
 
       .dropdown-content {
-        height: 0; // Initial height
+        height: 0;
         overflow: hidden;
         transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
-        padding: 0; // No padding initially
+        padding: 0;
 
         &.open {
-          height: auto; // Auto height to fit content
+          height: auto;
           padding: $spacing-md $spacing-lg;
           border: 1px solid $border-color;
-          background-color: rgba($accent-background-color, 0.8); // Soft background
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Softer shadow
-          backdrop-filter: blur(6px); // Reduced blur
+          background-color: rgba($accent-background-color, 0.8);
+          box-shadow: $shadow-large;
+          backdrop-filter: blur(8px);
         }
 
         .details-wrapper {
@@ -186,8 +191,7 @@
               object-fit: cover;
               border-radius: $border-radius-md;
               box-shadow: $shadow-small;
-              transition: transform 0.3s ease-in-out;
-
+              transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             }
           }
         }

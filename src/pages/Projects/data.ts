@@ -1,6 +1,5 @@
 import StakeholderInfo from "../../assets/screenshoots/Stakeholders.png";
 import StakeholderFilter from "../../assets/screenshoots/StakeholderFilter.png";
-import DeliveryChanges from "../../assets/screenshoots/DeliveryChanges.png";
 import DeliveryPlanning from "../../assets/screenshoots/DeliveryPlanning.png";
 import DeliveryRoutes from "../../assets/screenshoots/DeliveryRoutes.png";
 import DeliveryStatus from "../../assets/screenshoots/DeliveryStatus.png";
@@ -62,7 +61,7 @@ export const workData: WorkData[] = [
                         imageUrl: StakeholderInfo,
                     },
                     {
-                        description: 'Import and organize project data efficiently through Excel file uploads for seamless integration.',
+                        description: 'organize project data from Excel files efficiently, ensuring it is normalized and stored accurately in the database.',
                         imageUrl: Upload,
                     },
                 ],
@@ -72,7 +71,7 @@ export const workData: WorkData[] = [
                 desc: '',
                 sections: [
                     {
-                        description: 'Assign and manage safety packages with precision to ensure accurate and timely delivery.',
+                        description: 'Assign and manage safety packages, modify delivery details, and adjust package assignments to ensure accurate and timely delivery',
                         imageUrl: DeliveryPlanning,
                     },
                     {
@@ -80,12 +79,8 @@ export const workData: WorkData[] = [
                         imageUrl: DeliveryStatus,
                     },
                     {
-                        description: 'Plan and optimize delivery routes for field agents to reduce travel time and improve efficiency.',
+                        description: 'Plan and optimize delivery routes for field agents to reduce travel time.',
                         imageUrl: DeliveryRoutes,
-                    },
-                    {
-                        description: 'Modify delivery details, including package assignments and specifications, as needed for flexibility.',
-                        imageUrl: DeliveryChanges,
                     },
                 ],
             },
@@ -98,7 +93,7 @@ export const workData: WorkData[] = [
                         imageUrl: InventoryPackage,
                     },
                     {
-                        description: 'Store images and quantities of items to maintain precise inventory records and facilitate easy tracking.',
+                        description: 'Store images and quantities of items to maintain precise inventory records and facilitate easy inventory tracking.',
                         imageUrl: InventoryItems,
                     },
                     {

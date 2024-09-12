@@ -6,17 +6,15 @@ const Hero = () => {
         <div className="hero-container">
             <div className="hero-content">
                 <div className="hero-text">
-                    <h1 className="hero-title">Launch Your Custom Business Application</h1>
-                    <p>
-                        I design secure, cloud-based web applications (accessible via a web browser) to streamline business operations, improve efficiency, and
-                        ensure accuracy.
+                    <h1 className="hero-title">Build the Perfect Business Tool for Your Vision</h1>
+                    <p className="hero-subtitle">
+                        We craft secure, cloud-based applications tailored to streamline your business operations, ensuring efficiency and scalability.
                     </p>
                 </div>
                 <div className="hero-image-wrapper">
-                    <img className="hero-image" src={Image} alt="Laptops"/>
+                    <img className="hero-image" src={Image} alt="Custom web applications on devices"/>
                 </div>
             </div>
-
         </div>
     );
 };

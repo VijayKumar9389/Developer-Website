@@ -6,52 +6,9 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  padding: $spacing-lg $spacing-md; // Add padding for better spacing
   max-width: $breakpoint-xxl;
   margin: 0 auto;
   width: 100%;
-
-  // Competency list styles
-  .competency-list {
-    display: flex;
-    overflow-x: auto;
-    width: 100%;
-    gap: $spacing-md; // Consistent spacing
-    padding: $spacing-sm; // Reduced padding for a smaller look
-    scroll-behavior: smooth;
-
-    .competency-item {
-      display: flex;
-      align-items: center;
-      padding: $spacing-xs $spacing-sm;
-      gap: $spacing-xs;
-      cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-      border-radius: $border-radius-md; // Slightly smaller border-radius
-      background-color: rgba($accent-background-color, 0.8); // Soft background
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Softer shadow
-      backdrop-filter: blur(6px); // Reduced blur
-      border: 1px solid rgba($primary-color, 0.2);
-
-      &:hover,
-      &.active {
-        background-color: $primary-color; // Highlight on hover
-        color: $card-background;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // More shadow on hover
-        transform: scale(1.05); // Slight zoom effect
-      }
-
-      .icon {
-        margin-right: $spacing-xs; // Smaller margin
-        color: inherit;
-        font-size: 1.2rem; // Slightly smaller icons
-      }
-
-      .title {
-        margin: 0;
-      }
-    }
-  }
 
   // Competency section container
   .competency-section {
@@ -60,10 +17,24 @@
     padding: $spacing-md; // Consistent padding around the section
     align-items: center;
     width: 100%;
+    border-radius: $border-radius-lg;
+    margin-bottom: $spacing-lg; // Add bottom margin between sections
+
+    // Alternating background colors for odd sections
+    &:nth-child(odd) {
+      background-color: darken($background-color, 5%);
+
+      .competency-details {
+        @media (min-width: $breakpoint-lg) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
 
     @media (min-width: $breakpoint-lg) {
       flex-direction: row; // Switch to row layout on larger screens
       justify-content: center; // Center content horizontally
+      gap: $spacing-lg;
     }
 
     // Competency details section
@@ -79,10 +50,13 @@
       @media (min-width: $breakpoint-lg) {
         flex-direction: row;
         align-items: center; // Center both vertically and horizontally
-        justify-content: center; // Center content within the section
+        justify-content: space-between; // Spread content within the section
         text-align: left;
+        gap: $spacing-lg;
+
       }
 
+      // Image container
       .image-container {
         flex: 1;
         width: 100%;
@@ -101,6 +75,7 @@
         }
       }
 
+      // Description section
       .description {
         flex: 1;
         width: 100%;
@@ -108,6 +83,23 @@
         @media (min-width: $breakpoint-lg) {
           width: 50%; // Control the width of the description on larger screens
           margin-left: $spacing-lg; // Space between the image and description
+        }
+
+        .header-icon-title {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem;
+
+          .icon {
+            font-size: 2rem;
+            color: $primary-color; // Customize icon color
+          }
+
+          h5 {
+            font-size: $font-size-base-xl;
+            color: $text-primary;
+          }
         }
 
         ul {
@@ -126,7 +118,8 @@
 
             p {
               margin: 0;
-              line-height: 1.1; // Slightly increased line-height for better readability
+              line-height: 1.2; // Slightly increased line-height for better readability
+              font-size: $font-size-base-md; // Ensure text size is appropriate
             }
 
             &:before {
@@ -141,5 +134,4 @@
       }
     }
   }
-
 }
