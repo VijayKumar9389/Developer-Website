@@ -8,7 +8,7 @@ const Hero = () => {
                 <div className="hero-text">
                     <h1 className="hero-title">Build the Perfect Business Tool for Your Vision</h1>
                     <p className="hero-subtitle">
-                        We craft secure, cloud-based applications tailored to streamline your business operations, ensuring efficiency and scalability.
+                        I craft secure, cloud-based applications tailored to streamline your business operations, ensuring efficiency and scalability.
                     </p>
                 </div>
                 <div className="hero-image-wrapper">
